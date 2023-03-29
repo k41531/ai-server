@@ -1,0 +1,120 @@
+
+.grid-form {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+  
+  label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  input, select, textarea {
+    background-color: #333;
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    width: 100%;
+  }
+  
+  input[type="submit"] {
+    background-color: #00ff00;
+    border-radius: 0.5rem;
+    color: #000;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #00cc00;
+    color: #fff;
+  }
+  
+  textarea {
+    grid-column: 1 / span 2;
+    height: 8rem;
+  }
+  details {
+    grid-column:span 2;
+  }
+  
+  #model, #temperature, #maxLength, #frequencyPenalty, #presencePenalty, #topP {
+    background-color: #222;
+    border: 2px solid #00ff00;
+  }
+  
+  #model:focus, #temperature:focus, #maxLength:focus, #frequencyPenalty:focus, #presencePenalty:focus, #topP:focus {
+    border-color: #00cc00;
+    box-shadow: 0 0 5px #00ff00;
+  }
+  
+  #prompt {
+    background-color: #222;
+    border: 2px solid #00ff00;
+    height: 10rem;
+    resize: none;
+  }
+  
+  #prompt:focus {
+    border-color: #00cc00;
+    box-shadow: 0 0 5px #00ff00;
+  }
+  
+  form label::after {
+    content: "*";
+    color: #00ff00;
+    margin-left: 0.2rem;
+  }
+  
+  form label span {
+    color: #00ff00;
+  }
+  
+  input[type="checkbox"] {
+    display: none;
+  }
+  
+  input[type="checkbox"] + label {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  
+  input[type="checkbox"] + label::before {
+    content: "";
+    background-color: #222;
+    border: 2px solid #00ff00;
+    border-radius: 50%;
+    display: inline-block;
+    height: 1.2rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    width: 1.2rem;
+  }
+  
+  input[type="checkbox"]:checked + label::before {
+    background-color: #00ff00;
+    border-color: #00cc00;
+  }
+  
+  @media screen and (max-width: 768px) {
+    form {
+      grid-template-columns: 1fr;
+      max-width: 90%;
+    }
+  }

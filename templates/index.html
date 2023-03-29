@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title>My Chat App</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <link rel="stylesheet" type="text/css" href="static/form.css">
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="chat-header">
+        <h1>Chat with friends</h1>
+        <div class="tab">
+          <button class="tablinks" onclick="openTab(event, 'tab1')">Chat</button>
+          <button class="tablinks" onclick="openTab(event, 'tab2')">Settings</button>
+          <button class="tablinks" onclick="openTab(event, 'tab3')">Tab 3</button>
+        </div>
+      </div>
+      <div id="tab1" class="tabcontent">
+        <div class="chat-messages">
+          <div class="loading-animation">
+              <div class="loading-animation__dot"></div>
+              <div class="loading-animation__dot"></div>
+              <div class="loading-animation__dot"></div>
+            </div>
+          </div>
+          <form id="chat-form" class="chat-input">
+            <input id="chat-message" type="text" placeholder="Type your message...">
+            <button type="submit">Send</button>
+          </form>
+      </div>
+      
+      <div id="tab2" class="tabcontent">
+          <form>
+            <label for="model">Model:</label>
+            <select id="model" name="model">
+              <option value="davinci">Davinci</option>
+              <option value="curie">Curie</option>
+              <option value="babbage">Babbage</option>
+              <option value="ada">Ada</option>
+            </select>
+            <details>
+              <summary>More settings</summary>
+              <div class="grid-form">
+              <label for="temperature">Temperature:</label>
+              <input type="number" id="temperature" name="temperature" min="0" max="1" step="0.01" value="1">
+              
+              <label for="maxLength">Max Tokens:</label>
+              <input type="number" id="maxLength" name="maxLength" min="1" max="2048" value="2048">
+        
+              <label for="stopSequences">Stop Sequences:</label>
+              <input type="text" id="stopSequences" name="stopSequences" placeholder="Stop Sequences">
+        
+              <label for="frequencyPenalty">Frequency Penalty:</label>
+              <input type="number" id="frequencyPenalty" name="frequencyPenalty" min="0" max="1" step="0.01" value="0">
+        
+              <label for="presencePenalty">Presence Penalty:</label>
+              <input type="number" id="presencePenalty" name="presencePenalty" min="0" max="1" step="0.01" value="0">
+        
+              <label for="topP">Top P:</label>
+              <input type="number" id="topP" name="topP" min="0" max="1" step="0.01" value="0">
+              </div>
+            </details> 
+        
+        
+            <label for="prompt">System message</label><br>
+            <textarea id="prompt" name="prompt" rows="4" cols="50"></textarea>
+            
+            <input type="submit" value="Submit">
+          </form>
+      </div>
+      
+      <div id="tab3" class="tabcontent">
+        <h3>Tab 3 Content</h3>
+        <p>This is the content of Tab 3.</p>
+      </div>
+    </div>
+    <script src="static/script.js"></script>
+  </body>
+</html>
